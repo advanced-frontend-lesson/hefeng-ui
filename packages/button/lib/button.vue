@@ -1,12 +1,12 @@
 <template>
-  <button>按钮</button>
+  <button>按钮1</button>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: "hf-button",
+  name: "HButton",
   setup() {
     
   },
