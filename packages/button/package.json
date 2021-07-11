@@ -5,7 +5,7 @@
   "author": "hefeng6500 <2443992009@qq.com>",
   "homepage": "",
   "license": "ISC",
-  "main": "lib/button.js",
+  "main": "index.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
