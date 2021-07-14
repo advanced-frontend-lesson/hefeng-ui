@@ -18,7 +18,7 @@
       "eslint --fix",
       "prettier --write"
     ],
-    "*.{scss}": "prettier --write"
+    "*.{scss}": "stylelint --fix"
   },
   "repository": {
     "type": "git",
