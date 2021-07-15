@@ -18,5 +18,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:vue/vue3-recommended",
   ],
-  rules: {},
+  rules: {
+    "@typescript-eslint/no-var-requires": "off",
+  },
 };

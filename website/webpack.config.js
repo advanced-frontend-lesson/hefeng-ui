@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const { VueLoaderPlugin } = require("vue-loader");
+
 module.exports = {
   mode: "development",
   devtool: "source-map",
@@ -10,7 +11,6 @@ module.exports = {
     filename: "bundle.js",
   },
   resolve: {
-    // 解析模块 对应的扩展名有哪些
     extensions: [".ts", ".tsx", ".js", ".vue"],
   },
   module: {
@@ -30,12 +30,7 @@ module.exports = {
       },
       {
         test: /\.(scss|css)/,
-        use: [
-          // loader 三种写法  { }  ""  []
-          "style-loader",
-          "css-loader",
-          "sass-loader",
-        ],
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
   },
