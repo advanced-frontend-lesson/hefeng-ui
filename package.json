@@ -6,19 +6,11 @@
   ],
   "scripts": {
     "website-dev": "webpack serve --config ./website/webpack.config.js",
-    "prepare": "husky install"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged && lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,ts,vue}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "**/*.{scss}": "stylelint --fix"
+    "prepare": "husky install",
+    "lint": "eslint . --ext .js,.ts",
+    "lint-fix": "eslint . --ext .js,.ts --fix",
+    "pre-commit": "yarn lint-staged",
+    "format": "prettier --write \"./**/*.{ts,js,json,md}\""
   },
   "repository": {
     "type": "git",
