@@ -4,17 +4,19 @@ module.exports = {
     parser: "@typescript-eslint/parser",
     sourceType: "module",
     ecmaFeatures: {
-      jsx: true,
       tsx: true,
     },
   },
   env: {
+    es6: true,
     browser: true,
     node: true,
   },
   plugins: ["@typescript-eslint"],
   extends: [
+    "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:vue/vue3-recommended",
   ],
+  rules: {},
 };
