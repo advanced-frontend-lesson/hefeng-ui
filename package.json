@@ -6,7 +6,6 @@
   ],
   "scripts": {
     "website-dev": "webpack serve --config ./website/webpack.config.js",
-    "website-dev": "webpack serve --config ./website/webpack.config.js",
     "prepare": "husky install",
     "lint": "eslint . --ext .js,.ts",
     "lint-fix": "eslint . --ext .js,.ts --fix",
