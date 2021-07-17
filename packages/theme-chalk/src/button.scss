@@ -1,0 +1,17 @@
+@import "./mixins/mixin";
+
+@include b(button) {
+  color: red;
+
+  @include when(disabled) {
+    color: gray;
+  }
+
+  @include m(primary test) {
+    background-color: rgb(67, 169, 238);
+  }
+
+  @include e(about) {
+    font-size: 12px;
+  }
+}

@@ -1,13 +1,17 @@
-@import "../common/var.scss";
+@import "../common/var";
 
-// .z-button{}
+/**
+ * BEM
+ */
+
 @mixin b($block) {
   $B: $namespace + "-" + $block;
+
   .#{$B} {
     @content;
   }
 }
-// .z-button.is-xxx
+
 @mixin when($state) {
   @at-root {
     &.#{$state-prefix + $state} {
@@ -15,15 +19,26 @@
     }
   }
 }
-// &--primary => .z-button--primary
+
 @mixin m($modifier) {
+  $selector: &;
+  $currentSelector: "";
+
+  @each $unit in $modifier {
+    $currentSelector: #{$currentSelector +
+      $selector +
+      $modifier-separator +
+      $unit +
+      ","};
+  }
+
   @at-root {
-    #{& + $modifier-separator + $modifier} {
+    #{$currentSelector} {
       @content;
     }
   }
 }
-// &__header  => .z-button__header
+
 @mixin e($element) {
   @at-root {
     #{& + $element-separator + $element} {
