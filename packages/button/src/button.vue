@@ -1,5 +1,7 @@
 <template>
-  <button>按钮1</button>
+  <button class="h-button">
+    按钮1
+  </button>
 </template>
 
 <script lang="ts">
