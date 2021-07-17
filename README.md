@@ -1,4 +1,4 @@
-<p align="center" style="font-size: 30px;">HUI<p>
+<h1 align="center">HUI<h1>
 
 # usage
 
