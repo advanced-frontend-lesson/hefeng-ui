@@ -1,0 +1,17 @@
+/**
+ * BEM
+ */
+.h-button {
+  color: red;
+}
+.h-button.is-disabled {
+  color: gray;
+}
+
+.h-button--primary, .h-button--test {
+  background-color: #43a9ee;
+}
+
+.h-button__about {
+  font-size: 12px;
+}

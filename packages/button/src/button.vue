@@ -1,14 +1,13 @@
 <template>
-  <button>按钮1</button>
+  <button class="h-button">
+    按钮1
+  </button>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "HButton",
-  setup() {
-    
-  },
-})
+});
 </script>
