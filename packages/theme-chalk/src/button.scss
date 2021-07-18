@@ -1,17 +1,50 @@
+@charset "UTF-8";
+
+@use "sass:map";
+
 @import "./mixins/mixin";
+@import "./common/var.scss";
 
 @include b(button) {
-  color: red;
+  display: inline-block;
+  line-height: 1;
+  min-height: map.get($--input-height, "default");
+  cursor: pointer;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  margin: 0;
+
+  & + & {
+    margin-left: 10px;
+  }
 
   @include when(disabled) {
-    color: gray;
+    &,
+    &:hover,
+    &:focus {
+      cursor: not-allowed;
+    }
   }
 
-  @include m(primary test) {
-    background-color: rgb(67, 169, 238);
+  @include m(primary) {
+    @include button-variant($--color-white, $--color-primary, $--color-primary);
   }
 
-  @include e(about) {
-    font-size: 12px;
+  @include m(success) {
+    @include button-variant($--color-white, $--color-success, $--color-success);
+  }
+
+  @include m(warning) {
+    @include button-variant($--color-white, $--color-warning, $--color-warning);
+  }
+
+  @include m(danger) {
+    @include button-variant($--color-white, $--color-danger, $--color-danger);
+  }
+
+  @include m(info) {
+    @include button-variant($--color-white, $--color-info, $--color-info);
   }
 }
