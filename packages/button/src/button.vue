@@ -9,6 +9,7 @@
 <script lang="ts">
 import { computed, defineComponent } from "vue";
 import type { PropType } from "vue";
+import { throttle } from "../../utils";
 
 type IButtonType = PropType<
   "primary" | "success" | "warning" | "danger" | "info" | "text" | "default"
@@ -28,6 +29,8 @@ interface IButtonProps {
   autofocus: boolean;
   round: boolean;
   circle: boolean;
+  enableThrottle: boolean;
+  delay: number;
 }
 
 export default defineComponent({
@@ -48,9 +51,25 @@ export default defineComponent({
         ].includes(val);
       },
     },
+    round: {
+      type: Boolean,
+      default: false,
+    },
+    circle: {
+      type: Boolean,
+      default: false,
+    },
+    enableThrottle: {
+      type: Boolean,
+      default: false,
+    },
+    delay: {
+      type: Number,
+      default: 500,
+    },
   },
   emits: ["click"],
-  setup(props: any, ctx) {
+  setup(props: IButtonProps, ctx) {
     const classes = computed(() => {
       return [
         "h-button",
@@ -65,9 +84,11 @@ export default defineComponent({
         },
       ];
     });
-    const handleClick = (e: any) => {
+    const baseClick = (e: MouseEvent) => {
       ctx.emit("click", e);
     };
+    const throttleClick = throttle(baseClick, props.delay);
+    const handleClick = props.enableThrottle ? throttleClick : baseClick;
 
     return {
       classes,

@@ -1,6 +1,6 @@
 @import "../mixins/config";
 
-$--color-primary: #409eff;
+$--color-primary: #1890ff;
 $--color-white: #fff;
 $--color-black: #000;
 $--color-success: #67c23a;
@@ -9,7 +9,7 @@ $--color-danger: #f56c6c;
 $--color-info: #909399;
 
 $--input-height: (
-  "default": 40px,
+  "default": 32px,
   "medium": 36px,
   "small": 32px,
   "mini": 28px,
